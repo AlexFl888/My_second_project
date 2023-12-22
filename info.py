@@ -1,6 +1,6 @@
 #
-token = '6801598590:AAHQN35ZbK16Qnsl9q1rh0i3m0NxLAQyVb8'
-chat_id = 5731453711
+token = '6801598590:AAHQN35Z0NxLAQyVb8'
+chat_id = 511
 
 # Информация о персонаже
 character = {'name': 'Аватар', 'age': '17', 'hobby': ['Лук', 'Копья'], 'adress': 'Пандора'}

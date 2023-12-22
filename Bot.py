@@ -3,6 +3,7 @@ from telebot import types
 import random
 import wikipedia
 import re
+import urllib.request
 import info
 
 
@@ -59,7 +60,7 @@ def handle_docs_audio(message):
     audio_id = message.audio.file_id
     # Получаем путь, где лежит аудио файл на сервере Телеграмма
     file_info = bot.get_file(audio_id)
-    # Формируем ссылку и скачивам файл
+    # Формируем ссылку и скачиваем файл
     urllib.request.urlretrieve(f'http://api.telegram.org/file/bot{info.token}/{file_info.file_path}',
                                file_info.file_path)
 
