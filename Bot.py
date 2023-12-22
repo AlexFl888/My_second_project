@@ -44,7 +44,7 @@ def show_hobbies(message):
 
 
 @bot.message_handler(content_types=['photo'])
-def photo(message):
+def handle_photo(message):
     # Получим ID фото
     file_id = message.photo[-1].file_id
     # Получаем путь, где лежит фото на сервере Телеграмма
@@ -55,7 +55,7 @@ def photo(message):
 
 
 @bot.message_handler(content_types=['audio'])
-def handle_docs_audio(message):
+def handle_audio(message):
     # Получим ID аудио
     audio_id = message.audio.file_id
     # Получаем путь, где лежит аудио файл на сервере Телеграмма
@@ -66,7 +66,7 @@ def handle_docs_audio(message):
 
 
 @bot.message_handler(content_types=['document'])
-def handle_docs_audio(message):
+def handle_docs(message):
     document_id = message.document.file_id
     file_info = bot.get_file(document_id)
     urllib.request.urlretrieve(f'http://api.telegram.org/file/bot{info.token}/{file_info.file_path}',
@@ -74,7 +74,7 @@ def handle_docs_audio(message):
 
 
 @bot.message_handler(content_types=['sticker'])
-def handle_docs_audio(message):
+def handle_stickers(message):
     sticker_id = message.sticker.file_id
     file_info = bot.get_file(sticker_id)
     urllib.request.urlretrieve(f'https://api.telegram.org/file/bot{info.token}/{file_info.file_path}',
